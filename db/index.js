@@ -1,6 +1,8 @@
 // ℹ️ package responsible to make the connection with mongodb
 // https://www.npmjs.com/package/mongoose
 
+
+//const Phones = require('../models/Phones.model')
 const mongoose = require("mongoose");
 
 // ℹ️ Sets the MongoDB URI for our app to have access to it.
@@ -113,6 +115,15 @@ mongoose
   .then((x) => {
     const dbName = x.connections[0].name;
     console.log(`Connected to Mongo! Database name: "${dbName}"`);
+    /*  Phones.create(phones) //to seed the database
+      .then(data => {
+
+        console.log(`${data.length} Phones inserted.`)
+        mongoose.connection.close()
+
+      }).catch((err) => {
+        console.error("Error creating phones: ", err);
+      }); */
 
 })
   
